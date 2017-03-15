@@ -1,7 +1,7 @@
 #ifdef JUDGE
 #include <fstream>
 #include <iostream>
-#include <stack>
+#include <queue>
 std::ifstream cin("input.txt");
 std::ofstream cout("output.txt");
 #else
@@ -16,7 +16,7 @@ using std::cout;
 */
 int main() {
 
-	std::stack<int> mystack;
+	std::queue<int> myqueue;
 	int n;
 	cin >> n;
 	for(int i=0;i<n;i++){
@@ -25,11 +25,11 @@ int main() {
 		if(c == '+'){
 			int num;
 			cin >> num;
-			mystack.push(num);
+			myqueue.push(num);
 		}else{
-			int r = mystack.top();
+			int r = myqueue.front();
 			cout << r << "\n";
-			mystack.pop();
+			myqueue.pop();
 		}
 	}
     return 0;
